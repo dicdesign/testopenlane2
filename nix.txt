@@ -1,0 +1,10 @@
+To get started using Nix, open a new shell or run `. /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh`
+sudo su
+nix-env -f "<nixpkgs>" -iA cachix
+sudo env PATH="$PATH" cachix use openlane
+sudo pkill nix-daemon
+cd
+git clone https://github.com/efabless/openlane2
+cd openlane2
+nix-shell
+openlane --smoke-test
